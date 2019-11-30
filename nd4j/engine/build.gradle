@@ -1,0 +1,20 @@
+dependencies {
+    api 'org.nd4j:nd4j-api:1.0.0-beta5'
+    api 'org.nd4j:nd4j-native-platform:1.0.0-beta5'
+    api 'org.slf4j:slf4j-simple:1.7.29'
+    api project(":api")
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'build/generated-src']
+        }
+    }
+}
+
+checkstyleMain.source = 'src/main/java'
+pmdMain.source = 'src/main/java'
+
+apply plugin:'application'
+mainClassName = "ai.djl.nd4j.HelloWorld"
