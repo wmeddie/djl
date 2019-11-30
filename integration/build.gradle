@@ -65,18 +65,3 @@ jacocoTestReport {
 }
 
 
-tasks.distTar.enabled = false
-test.finalizedBy project.tasks.jacocoTestReport
-
-check.dependsOn jacocoTestReport
-check.dependsOn jacocoTestCoverageVerification
-
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.1
-            }
-        }
-    }
-}
